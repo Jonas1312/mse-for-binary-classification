@@ -1,0 +1,1 @@
+pandoc README.md -V geometry:margin=1in --pdf-engine=lualatex -o README.pdf
