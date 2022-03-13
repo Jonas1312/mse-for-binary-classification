@@ -22,13 +22,13 @@ Some comments on the "Bonus" section of [this article](https://theaisummer.com/m
 
 ## Proposed demonstration
 
-- Let's assume we have a simple neural network with weights $\theta$ such as $z=\theta^\intercal x$, and outputs $\hat{y}=\sigma(z)$ with a sigmoid activation.
+- Let's assume that we have a simple neural network with weights $\theta$ such as $z=\theta^\intercal x$, and outputs $\hat{y}=\sigma(z)$ with a sigmoid activation.
 - $\frac{\partial L}{\partial \theta}=\frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial z}\frac{\partial z}{\partial \theta}$ with $L$ being the loss.
 - with MSE:
   - $L(y, \hat{y}) = \frac{1}{2}(y-\hat{y})^2$
   - $\frac{\partial L}{\partial \theta}=-(y-\hat{y})\sigma(z)(1-\sigma(z))x$
   - $\frac{\partial L}{\partial \theta}=-(y-\hat{y})\hat{y}(1-\hat{y})x$
-  - $\sigma(z)(1-\sigma(z))$ makes the gradient really small or null if $\sigma(z)$ is close to 1. The neural net can't train.
+  - $\sigma(z)(1-\sigma(z))$ makes the gradient vanish if $\sigma(z)$ is close to 0 or 1. Thus, the neural net can't train.
 - with BCE:
   - $L(y, \hat{y}) = -ylog(\hat{y})-(1-y)log(1-\hat{y})$
   - for $y=0$
