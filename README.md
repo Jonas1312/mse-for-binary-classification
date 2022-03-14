@@ -33,7 +33,7 @@ Some comments on the "Bonus" section of [this article](https://theaisummer.com/m
   - $\sigma(z)(1-\sigma(z))$ makes the gradient vanish if $\sigma(z)$ is close to 0 or 1. Thus, the neural net can't train.
 - with BCE:
   - $L(y, \hat{y}) = -ylog(\hat{y})-(1-y)log(1-\hat{y})$
-  - for $y=0$
+  - for $y=0$:
     - $\frac{\partial L}{\partial \theta}=\frac{1-y}{1-\hat{y}}\sigma(z)(1-\sigma(z))x$
     - $\frac{\partial L}{\partial \theta}=\frac{1-y}{1-\hat{y}}\hat{y}(1-\hat{y})x$
     - $\frac{\partial L}{\partial \theta}=(1-y)(\hat{y})x$
