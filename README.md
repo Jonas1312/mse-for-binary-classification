@@ -1,6 +1,6 @@
 # What would happen if we use MSE on binary classification?
 
-**PDF version with LaTeX formulas rendered:** [https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf](https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf)
+**PDF version of this README with LaTeX formulas rendered:** [https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf](https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf)
 
 ## Context
 
