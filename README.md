@@ -1,7 +1,5 @@
 # What would happen if we use MSE on binary classification?
 
-## Context
-
 Some comments on the "Bonus" section of [this article](https://theaisummer.com/mle/#bonus-what-would-happen-if-we-use-mse-on-binary-classification) from AI Summer.
 
 ***Edit:** The article has been updated with my demonstration [(link)](https://theaisummer.com/mle/#proposed-demonstration-by-jonas-maison).*
