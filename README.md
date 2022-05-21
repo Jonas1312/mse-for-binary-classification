@@ -1,7 +1,5 @@
 # What would happen if we use MSE on binary classification?
 
-**PDF version of this README with LaTeX formulas rendered:** [https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf](https://raw.githubusercontent.com/Jonas1312/mse-for-binary-classification/main/README.pdf)
-
 ## Context
 
 Some comments on the "Bonus" section of [this article](https://theaisummer.com/mle/#bonus-what-would-happen-if-we-use-mse-on-binary-classification) from AI Summer.
