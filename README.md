@@ -13,7 +13,7 @@ Some comments on the "Bonus" section of [this article](https://theaisummer.com/m
 1) "When $\hat{y}^{(i)} = 1$" and "When $\hat{y}^{(i)} = 0$" are inverted.
 
 3) I have no idea why the authors replace $y^{(i)}$ with $\sigma(\theta^\intercal x)$ or $1-\sigma(\theta^\intercal x)$ when the class changes. If properly trained, the model weights should "push" the sigmoid to output 0 or 1 depending on the input $x$.
-4) The proposed demonstration don't prove anything:
+4) The proposed demonstration doesn't prove anything:
    1) When $y^{(i)} = 0$, negative class:
 
        $$MSE = \frac{1}{m}\sum_{i}^{m}{{\lVert -\hat{y}^{(i)} \rVert}^2} = \frac{1}{m}\sum_{i}^{m}{{\lVert \sigma(\theta^\intercal x) \rVert}^2}$$
