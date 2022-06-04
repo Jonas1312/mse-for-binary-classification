@@ -33,9 +33,12 @@ $$L(y, \hat{y}) = \frac{1}{2}(y-\hat{y})^2$$
 
 Thus, the gradient with respect to $\theta$ is:
 
-$$\frac{\partial L}{\partial \theta}=-(y-\hat{y})\sigma(z)(1-\sigma(z))x$$
-
-$$\frac{\partial L}{\partial \theta}=-(y-\hat{y})\hat{y}(1-\hat{y})x$$
+$$\begin{equation}
+\begin{split}
+\frac{\partial L}{\partial \theta} & =-(y-\hat{y})\sigma(z)(1-\sigma(z))x \\
+ & = -(y-\hat{y})\hat{y}(1-\hat{y})x \\
+\end{split}
+\end{equation}$$
 
 We can see that $\sigma(z)(1-\sigma(z))$ makes the gradient vanish if $\sigma(z)$ is too close to 0 or 1. Thus, the neural net can't train properly.
 
@@ -43,24 +46,27 @@ When we try with a BCE loss:
 $$L(y, \hat{y}) = -ylog(\hat{y})-(1-y)log(1-\hat{y})$$
 
 For $y=0$ (negative class), we have:
-$$\frac{\partial L}{\partial \theta}=\frac{1-y}{1-\hat{y}}\sigma(z)(1-\sigma(z))x$$
 
-$$\frac{\partial L}{\partial \theta}=\frac{1-y}{1-\hat{y}}\hat{y}(1-\hat{y})x$$
- 
-$$\frac{\partial L}{\partial \theta}=(1-y)(\hat{y})x$$
-
-$$\frac{\partial L}{\partial \theta}=\hat{y}x$$
+$$\begin{equation}
+\begin{split}
+\frac{\partial L}{\partial \theta} & = \frac{1-y}{1-\hat{y}}\sigma(z)(1-\sigma(z))x \\
+ & = \frac{1-y}{1-\hat{y}}\hat{y}(1-\hat{y})x \\
+ & =(1-y)\hat{y}x \\
+ & =\hat{y}x\\
+\end{split}
+\end{equation}$$
 
 If the network is right and predicted the negative class, $\hat{y}=0$, the gradient is null as expected.
     
 For $y=1$ (positive class), we have:
 
-$$\frac{\partial L}{\partial \theta}=-\frac{y}{\hat{y}}\sigma(z)(1-\sigma(z))x$$
-
-$$\frac{\partial L}{\partial \theta}=-\frac{y}{\hat{y}}\hat{y}(1-\hat{y})x$$
-
-$$\frac{\partial L}{\partial \theta}=-y(1-\hat{y})x$$
-
-$$\frac{\partial L}{\partial \theta}=-(1-\hat{y})x$$
+$$\begin{equation}
+\begin{split}
+\frac{\partial L}{\partial \theta} & = -\frac{y}{\hat{y}}\sigma(z)(1-\sigma(z))x \\
+ & = -\frac{y}{\hat{y}}\hat{y}(1-\hat{y})x \\
+ & =-y(1-\hat{y})x \\
+ & =-(1-\hat{y})x\\
+\end{split}
+\end{equation}$$
 
 If the network is right, $\hat{y}=1$, the gradient is null as expected.
