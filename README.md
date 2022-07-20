@@ -10,9 +10,9 @@ Some comments on the "Bonus" section of [this article](https://theaisummer.com/m
 
 ## Review
 
-1) "When $\\, \hat{y}^{(i)} = 1 $" and "When $\hat{y}^{(i)} = 0$" are inverted.
+1) "When $\hat{y}^{(i)} = 1$" and "When $\hat{y}^{(i)} = 0$" are inverted.
 
-3) I have no idea why the authors replace $\\, y^{(i)} $ with $\sigma(\theta^\intercal x)$ or $1-\sigma(\theta^\intercal x)$ when the class changes. If properly trained, the model weights should "push" the sigmoid to output 0 or 1 depending on the input $x$.
+3) I have no idea why the authors replace $y^{(i)}$ with $\sigma(\theta^\intercal x)$ or $1-\sigma(\theta^\intercal x)$ when the class changes. If properly trained, the model weights should "push" the sigmoid to output 0 or 1 depending on the input $x$.
 4) The proposed demonstration does not actually prove anything:
    1) When $y^{(i)} = 0$, negative class:
 
@@ -23,9 +23,9 @@ Some comments on the "Bonus" section of [this article](https://theaisummer.com/m
 
 ## Proposed demonstration
 
-Let's assume that we have a simple neural network with weights $\\, \theta $ such as $\\, z=\theta^\intercal x $, and outputs $\hat{y}=\sigma(z)$ after a sigmoid activation.
+Let's assume that we have a simple neural network with weights $\theta$ such as $z=\theta^\intercal x$, and outputs $\hat{y}=\sigma(z)$ after a sigmoid activation.
 
-The chain rule gives us the gradient of the loss $\\, L $ with respect to the weights $\theta$:
+The chain rule gives us the gradient of the loss $L$ with respect to the weights $\theta$:
 $$\frac{\partial L}{\partial \theta}=\frac{\partial L}{\partial \hat{y}}\frac{\partial \hat{y}}{\partial z}\frac{\partial z}{\partial \theta}$$
 
 MSE loss is expressed as follows:
@@ -40,7 +40,7 @@ $$\begin{equation}
 \end{split}
 \end{equation}$$
 
-We can see that $\\, \sigma(z)(1-\sigma(z)) $ makes the gradient vanish if $\sigma(z)$ is too close to 0 or 1. Thus, the neural net can't train properly.
+We can see that $\sigma(z)(1-\sigma(z))$ makes the gradient vanish if $\sigma(z)$ is too close to 0 or 1. Thus, the neural net can't train properly.
 
 When we try with a BCE loss:
 $$L(y, \hat{y}) = -ylog(\hat{y})-(1-y)log(1-\hat{y})$$
